@@ -1,0 +1,103 @@
+header {
+    position: fixed;
+    top: 20px;
+    left: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    z-index: 1111;
+    height: 50px;
+    @media (min-width: 768px) {
+        nav {
+            display: block !important;
+            ul {
+                li {
+                    a {
+                        position: relative;
+                        &::before {
+                            content: "";
+                            width: 0;
+                            height: 2px;
+                            background-color: #fff;
+                            position: absolute;
+                            left: 0;
+                            bottom: -16px;
+                            transition: .3s;
+                        }
+                        &:hover {
+                            &::before {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        nav {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: calc(100% + 20px);
+            background-color: #fff !important;
+            ul {
+                padding: 30px 0;
+                flex-direction: column;
+                align-items: flex-start !important;
+                li {
+                    a {
+                        color: rgba(0,0,0, .5) !important;
+                    }
+                }
+            }
+        }
+        .menu {
+            display: flex !important;
+        }
+    }
+    .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i {
+            font-size: 20px;
+            color: $grey;
+        }
+    }
+    nav {
+        display: none;
+        padding: 15px 50px;
+        background-color: rgba($grey, .4);
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            li {
+                a {
+                    font-size: 16px;
+                    font-weight: 300;
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+            }
+
+        }
+    }
+    .menu {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        i {
+            font-size: 26px;
+            color: $grey;
+        }
+    }
+}
